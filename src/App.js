@@ -59,6 +59,7 @@ export default function App() {
         {path:"profile", element: <rotectedRouting> <Profile userData={userData} /></rotectedRouting>},
         {path:"login", element: <Login saveUserData={saveUserData}/>},
         {index:true, element: <ProtectedRouter2><Register/></ProtectedRouter2>},
+        {index:"e-Commerce-/", element: <ProtectedRouter2><Register/></ProtectedRouter2>},
         {path:"forgetpassword", element: <ForgetPasword/>},
         {path:"resetPassword", element: <ResetPassword/>},
         {path:"*", element: <Notfound/>},
