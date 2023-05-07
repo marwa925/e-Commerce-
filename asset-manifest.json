@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/e-Commerce-/static/css/main.499086f7.css",
-    "main.js": "/e-Commerce-/static/js/main.46cbac66.js",
+    "main.js": "/e-Commerce-/static/js/main.e558d6b0.js",
     "static/js/787.2dba336e.chunk.js": "/e-Commerce-/static/js/787.2dba336e.chunk.js",
     "static/media/fa-solid-900.ttf": "/e-Commerce-/static/media/fa-solid-900.2877d54f94f30c5d563c.ttf",
     "static/media/shopping2.jpg": "/e-Commerce-/static/media/shopping2.0ca2f505ddfd92e72653.jpg",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.woff2": "/e-Commerce-/static/media/fa-v4compatibility.497d535001197a9c5b38.woff2",
     "index.html": "/e-Commerce-/index.html",
     "main.499086f7.css.map": "/e-Commerce-/static/css/main.499086f7.css.map",
-    "main.46cbac66.js.map": "/e-Commerce-/static/js/main.46cbac66.js.map",
+    "main.e558d6b0.js.map": "/e-Commerce-/static/js/main.e558d6b0.js.map",
     "787.2dba336e.chunk.js.map": "/e-Commerce-/static/js/787.2dba336e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.499086f7.css",
-    "static/js/main.46cbac66.js"
+    "static/js/main.e558d6b0.js"
   ]
 }
