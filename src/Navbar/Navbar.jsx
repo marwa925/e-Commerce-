@@ -94,7 +94,7 @@ export default function Navbar({ userData, logOut }) {
                     </span>
                   </li>
                   <li className="nav-item">
-                    <span className="nav-link" onClick={logOut}>
+                    <span className="nav-link" style={{cursor:"pointer"}} onClick={logOut}>
                       Logout
                     </span>
                   </li>

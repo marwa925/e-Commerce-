@@ -42,8 +42,9 @@ export default function Login({saveUserData}) {
     }
   }
   return (
-    <div>
-      <h2 className='mt-2'>Login Now:</h2>
+    <div className='container'>
+    <div className='col-md-5 m-auto rounded shadow p-3 bg-light my-5'>
+      <h2 className='mt-2 text-dark'>Login Now:</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className='my-3'>
           <label htmlFor="email">Email</label>
@@ -57,12 +58,13 @@ export default function Login({saveUserData}) {
         </div>
         <Link to="/forgetpassword">Forget Password</Link> <br/>
         {errorMsg !=""? <div className=' alert alert-danger'>{errorMsg}</div>: ""}
-        {loading ?<button  type='button' className='btn btn-success'>
+        {loading ?<button  type='button' className='btn btn-success my-2'>
           <i className='fa-solid fa-spinner fa-spin text-white'></i>
-        </button> : <button  type='submit' className='btn btn-success'>Login</button>
+        </button> : <button  type='submit' className='btn btn-success my-2'>Login</button>
 }
         
       </form>
+    </div>
     </div>
   )
 }

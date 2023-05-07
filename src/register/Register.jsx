@@ -46,8 +46,9 @@ export default function Register() {
     }
   }
   return (
-    <div>
-      <h2 className='mt-2'>Register Now:</h2>
+    <div className='container'>
+    <div className='col-md-5 m-auto rounded shadow p-3 bg-light my-5'>
+      <h2 className='mt-2 text-dark'>Register Now:</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className='my-3'>
           <label htmlFor="name">name</label>
@@ -75,12 +76,13 @@ export default function Register() {
           <p className='text-danger'>{formik.errors.phone}</p>
         </div>
         {errorMsg !=""? <div className=' alert alert-danger'>{errorMsg}</div>: ""}
-        {loading ?<button  type='button' className='btn btn-success'>
+        {loading ?<button  type='button' className='btn btn-success my-2'>
           <i className='fa-solid fa-spinner fa-spin text-white'></i>
-        </button> : <button disabled={!formik.isValid} type='submit' className='btn btn-success'>Register</button>
+        </button> : <button disabled={!formik.isValid} type='submit' className='btn btn-success my-2'>Register</button>
 }
         
       </form>
+    </div>
     </div>
   )
 }

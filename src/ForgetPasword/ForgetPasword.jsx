@@ -48,10 +48,11 @@ export default function ForgetPasword() {
         }
     }
   return (
-    <div>
+    <div className='container'>
+    <div className='col-md-5 m-auto rounded shadow p-3 bg-light my-5'>
         {flag?<form onSubmit={form1.handleSubmit}>
             <div>
-                <label htmlFor="email">email</label>
+                <label htmlFor="email">Email</label>
                 <input onChange={form1.handleChange} type="email" name="email" id="email"  className='form-control'/>
             </div>
             <p className='text-danger'>{form1.errors.email}</p>
@@ -68,6 +69,7 @@ export default function ForgetPasword() {
         
 
         
+    </div>
     </div>
   )
 }

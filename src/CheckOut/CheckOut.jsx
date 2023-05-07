@@ -2,10 +2,16 @@ import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import * as Yup from 'yup';
 export default function CheckOut() {
   let Baseurl = "https://route-ecommerce.onrender.com";
   let {cardId} = useParams();
+  let validationSchema=Yup.object({
+      details:Yup.string().required().matches(/^[a-zA-Z]{3,30}$/,"enter details from 3 to 30 letter"),
+      phone:Yup.string().required().matches(/^(010|011|012|015)[0-9]{8}$/,"enter valid phone"),
+      city:Yup.string().required().matches(/^[a-zA-z]{3,10}$/,"enter valid city")
+    })
+
   let formik = useFormik({
     initialValues: {
       details: "",
@@ -16,6 +22,7 @@ export default function CheckOut() {
       console.log(vals);
       check(vals,cardId)
     },
+    validationSchema
   });
   async function check(vals, id) {
     let body = {
@@ -38,7 +45,7 @@ export default function CheckOut() {
     <div>
       <div className="container">
         <div className="col-md-5 m-auto rounded shadow p-3 bg-light my-5">
-          <h5 className="text-dark fw-bold">Prepare For Payment </h5> <hr />
+          <h2 className="text-dark fw-bold">Prepare For Payment </h2> <hr />
           <form onSubmit={formik.handleSubmit}>
             <div className="my-2">
               <label htmlFor="details">details</label>
@@ -70,7 +77,7 @@ export default function CheckOut() {
                 className="form-control"
               />
             </div>
-            <button className="btn btn-primary" type="submit">
+            <button className="btn btn-success" type="submit">
               Pay
             </button>
           </form>
