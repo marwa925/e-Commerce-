@@ -40,9 +40,9 @@ export default function ProductDetails() {
     }
   }
   return (
-    <>
+    <div className="bg-white">
       {productDetails ? (
-        <div className="container my-2">
+        <div className="container py-2">
           {productDetails ? (
             <div className="row align-items-center">
               <div className="col-md-4">
@@ -103,6 +103,6 @@ export default function ProductDetails() {
           <i class="fa-solid fa-shopping-cart fa-bounce text-success fa-4x"></i>
         </div>
       )}
-    </>
+    </div>
   );
 }

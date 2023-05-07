@@ -26,10 +26,10 @@ export default function Products() {
     }
   }
   return (
-    <>
+    <div className='bg-white'>
     {products[0]?<div>
       <div className="container"> 
-        <div className='row g-3 my-5'>
+        <div className='row g-3 py-5'>
       {products.map((el,i)=>{
         return <div key={i} className='col-md-3 products'>
           <Link to={'/productDetails/'+el._id}>
@@ -57,7 +57,7 @@ export default function Products() {
     </div>:<div className='z-3 d-flex vh-100 bg-light justify-content-center align-items-center'>
     <i class="fa-solid fa-shopping-cart fa-bounce text-success fa-4x"></i>
         </div>}
-    </>
+    </div>
     
   )
 }

@@ -28,12 +28,12 @@ export default function Home() {
     }
   }
   return (
-    <>
+    <div className='bg-white'>
     {products[0]?<>
     <MainSlider/>
     
-    <div className="container"> 
-        <div className='row g-3 my-5'>
+    <div className="container "> 
+        <div className='row g-3 py-5'>
       {products.slice(0,12).map((el,i)=>{
         return <div key={i} className='col-md-3 products'>
           <Link to={'/productDetails/'+el._id}>
@@ -65,7 +65,7 @@ export default function Home() {
         <i class="fa-solid fa-shopping-cart fa-bounce text-success fa-4x"></i>
         </div>
     </>}
-    </>
+    </div>
     
     
   )

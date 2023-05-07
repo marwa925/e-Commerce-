@@ -83,3 +83,10 @@ h2{
 .borders:hover{
     transform: scale(1.05);
 }
+body{
+    background-image: url('./assets/image/alarm-clock-laptop-with-copy-space.jpg');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

@@ -14,7 +14,7 @@ export default function Navbar({ userData, logOut }) {
   }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg bg-light shadow">
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={Logo} className="w-100" alt="" />

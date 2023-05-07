@@ -16,12 +16,12 @@ export default function CartDetails() {
     }
   }
   return (
-    <>
+    <div className="bg-white">
       {cartData ? (
         <div className="container">
           {cartData ? (
             <>
-              <div className="my-3 text-end">
+              <div className="py-3 text-end">
                 <button disabled className="btn btn-danger rounded-pill">
                   {" "}
                   Total Price: {cartData.data.totalCartPrice} EGP
@@ -142,6 +142,6 @@ export default function CartDetails() {
           <i class="fa-solid fa-shopping-cart fa-bounce text-success fa-4x"></i>
         </div>
       )}
-    </>
+    </div>
   );
 }
