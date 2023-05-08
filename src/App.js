@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, Navigate, RouterProvider } from 'react-router-dom'
 import Home from './Home/Home'
 import Layout from './Layout/Layout'
 import Login from './Login/Login'
@@ -48,7 +48,7 @@ export default function App() {
       return props.children;
     }
   }
-  let routers= createBrowserRouter([
+  let routers= createHashRouter([
     {
       path:"", element: <Layout logOut={logOut} userData={userData}/>, children:[
         {path:"home", element: <ProtectedRouting> <Home/> </ProtectedRouting> },
@@ -59,7 +59,6 @@ export default function App() {
         {path:"profile", element: <rotectedRouting> <Profile userData={userData} /></rotectedRouting>},
         {path:"login", element: <Login saveUserData={saveUserData}/>},
         {index:true, element: <ProtectedRouter2><Register/></ProtectedRouter2>},
-        {index:"/", element: <ProtectedRouter2><Register/></ProtectedRouter2>},
         {path:"forgetpassword", element: <ForgetPasword/>},
         {path:"resetPassword", element: <ResetPassword/>},
         {path:"*", element: <Notfound/>},
