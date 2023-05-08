@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React from "react";
+import React , { useState } from "react";
 import { useParams } from "react-router-dom";
 import * as Yup from 'yup';
 export default function CheckOut() {
+  let [loading, setloading] = useState(false);
   let Baseurl = "https://route-ecommerce.onrender.com";
   let {cardId} = useParams();
   let validationSchema=Yup.object({
@@ -22,7 +23,7 @@ export default function CheckOut() {
       console.log(vals);
       check(vals,cardId)
     },
-    validationSchema
+    validationSchema,
   });
   async function check(vals, id) {
     let body = {
@@ -31,11 +32,13 @@ export default function CheckOut() {
     let headers = {
       token: localStorage.getItem("token"),
     };
+    setloading(true);
     let { data } = await axios.post(
       `${Baseurl}/api/v1/orders/checkout-session/${id}?url=http://localhost:3000/#/`,
       body,
       { headers }
     );
+    setloading(false);
     console.log(data);
     if(data.status=="success"){
         window.open(data.session.url,"_self")
@@ -56,6 +59,7 @@ export default function CheckOut() {
                 name="details"
                 className="form-control"
               />
+              <p className="text-danger">{formik.errors.details}</p>
             </div>
             <div className="my-2">
               <label htmlFor="phone">phone</label>
@@ -66,6 +70,7 @@ export default function CheckOut() {
                 name="phone"
                 className="form-control"
               />
+                            <p className="text-danger">{formik.errors.phone}</p>
             </div>
             <div className="my-2">
               <label htmlFor="city">city</label>
@@ -76,10 +81,14 @@ export default function CheckOut() {
                 name="city"
                 className="form-control"
               />
+                            <p className="text-danger">{formik.errors.city}</p>
             </div>
-            <button className="btn btn-success" type="submit">
+            {loading?<button type="button" className="btn btn-success my-2">
+                <i className="fa-solid fa-spinner fa-spin text-white"></i>
+              </button> :<button className="btn btn-success" type="submit">
               Pay
-            </button>
+            </button>}
+            
           </form>
         </div>
       </div>
