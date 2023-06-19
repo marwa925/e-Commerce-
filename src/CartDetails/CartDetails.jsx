@@ -12,9 +12,10 @@ export default function CartDetails() {
   }, []);
   function countFun(id, count) {
     {
-      count == 1 ? removeItem(id) : updateQuntity(id, (count -= 1));
+      count == 1 ? removeItem(id) : updateQuntity(id, (count -= 1))
     }
   }
+  
   return (
     <div className="bg-white">
       {cartData ? (
@@ -57,34 +58,35 @@ export default function CartDetails() {
                                   <th>quantity</th>
                                   <td>:</td>
                                   <td>
-                                    {loading ? (
+                                    {/* {loading ? (
                                       <button
                                         type="button"
                                         className="btn bg-danger btn-sm rounded text-light py-0"
                                       >
                                         <i className="fa-solid fa-spinner fa-spin text-white"></i>
                                       </button>
-                                    ) : (
+                                    ) : ( */}
                                       <button
                                         style={{ cursor: "pointer" }}
-                                        onClick={() => {
+                                        onClick={(e) => {
                                           countFun(el.product._id, el.count);
+                                          console.log(e.target)
                                         }}
                                         className="btn  btn-sm  rounded bg-danger text-light py-0"
                                       >
                                         -
                                       </button>
-                                    )}
+                                    
 
                                     <span className="mx-2">{el.count}</span>
-                                    {loading ? (
+                                    {/* {loading ? (
                                       <button
                                         type="button"
                                         className="btn bg-success btn-sm rounded text-light py-0"
                                       >
                                         <i className="fa-solid fa-spinner fa-spin text-white"></i>
                                       </button>
-                                    ) : (
+                                    ) :  */}
                                       <button
                                         style={{ cursor: "pointer" }}
                                         onClick={() => {
@@ -97,7 +99,7 @@ export default function CartDetails() {
                                       >
                                         +
                                       </button>
-                                    )}
+                                    
                                   </td>
                                 </tr>
 
